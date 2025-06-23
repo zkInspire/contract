@@ -5,7 +5,6 @@ import "forge-std/Test.sol";
 import "forge-std/console.sol";
 import "../src/ProofOfInspiration.sol";
 
-
 contract MockUniswapV4PoolManager {
     mapping(bytes32 => bool) public pools;
 
