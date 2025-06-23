@@ -33,6 +33,55 @@
 - Graph Structure Implementation
 - Network Value Distribution
 
+# Proof of Inspiration Protocol - Table of Contents
+
+## [Technical Architecture](#technical-architecture)
+- [Core Protocol Stack](#core-protocol-stack)
+- [Smart Contract Components](#smart-contract-components)
+
+## [Uniswap V4 Integration](#uniswap-v4-integration)
+- [Hook-Based Revenue Distribution](#hook-based-revenue-distribution)
+- [Pool Architecture](#pool-architecture)
+- [Position Management](#position-management)
+
+## [Zora Protocol Integration](#zora-protocol-integration)
+- [Token Deployment Pipeline](#token-deployment-pipeline)
+- [Metadata Standards](#metadata-standards)
+
+## [Revenue Distribution Engine](#revenue-distribution-engine)
+- [Multi-Layer Distribution](#multi-layer-distribution)
+- [Inspiration Graph Traversal](#inspiration-graph-traversal)
+
+## [Content Creation Flow](#content-creation-flow)
+- [Primary Content Creation](#primary-content-creation)
+- [Derivative Content Creation](#derivative-content-creation)
+
+## [Zero-Knowledge Proof Integration](#zero-knowledge-proof-integration)
+- [Proof Types](#proof-types)
+- [ZK Verification Implementation](#zk-verification-implementation)
+
+## [Data Structures](#data-structures)
+- [Core Storage](#core-storage)
+- [State Mappings](#state-mappings)
+
+## [Reputation System](#reputation-system)
+- [Scoring Algorithm](#scoring-algorithm)
+- [Reputation Metrics](#reputation-metrics)
+
+## [Administrative Functions](#administrative-functions)
+- [Owner Controls](#owner-controls)
+- [Dispute Mechanism](#dispute-mechanism)
+
+## [Revenue Claiming](#revenue-claiming)
+- [Manual Revenue Withdrawal](#manual-revenue-withdrawal)
+- [Batch Revenue Claims](#batch-revenue-claims)
+
+## [Query Functions](#query-functions)
+- Content Discovery
+
+## [Testing Framework](#testing-framework)
+- Mock Contract Implementation
+- Test Coverage
 
 ## 1. Zora Coin Factory Deployment Pattern
 
