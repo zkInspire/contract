@@ -1,6 +1,6 @@
-##  **Utilize Zora Coins integration with Uniswap V4**
+#  **Utilize Zora Coins integration with Uniswap V4**
 
-### Direct Integration Points:
+## Direct Integration Points:
 ```solidity
 // 1. Deploys Zora Coins through ZoraFactory
 (coinAddress, ) = zoraFactory.deploy{value: msg.value}(
@@ -37,9 +37,9 @@ uniswapV4PoolManager.initialize(
 
 ---
 
-##  **Build tools or experiences that enhance trading/liquidity for Coins**
+#  **Build tools or experiences that enhance trading/liquidity for Coins**
 
-### Enhanced Trading Features:
+## Enhanced Trading Features:
 ```solidity
 // 1. Automatic liquidity position creation
 (positionTokenId, , , ) = positionManager.mint(mintParams);
@@ -78,11 +78,11 @@ function calculateRankingScore(bytes32 contentId) external view returns (uint256
 
 ---
 
-##  Demonstrate innovative use of Uniswap V4 features with Coins
+#  Demonstrate innovative use of Uniswap V4 features with Coins
 
-### V4 Innovation Usage:
+## V4 Innovation Usage:
 
-#### **1. Custom Hooks Integration**
+### **1. Custom Hooks Integration**
 ```solidity
 address public immutable proofOfInspirationHook;
 
@@ -90,14 +90,14 @@ address public immutable proofOfInspirationHook;
 hooks: IHooks(proofOfInspirationHook)
 ```
 
-#### **2. Position Subscriber Pattern**
+### **2. Position Subscriber Pattern**
 ```solidity
 // Implements IPositionSubscriber for automatic notifications
 function notifyModifyLiquidity(uint256 tokenId, int256 liquidityDelta, BalanceDelta feesAccrued)
 function notifyTransfer(uint256 tokenId, address previousOwner, address newOwner)
 ```
 
-#### **3. Singleton Pool Manager Architecture**
+### **3. Singleton Pool Manager Architecture**
 ```solidity
 IUniswapV4PoolManager public immutable uniswapV4PoolManager;
 
@@ -105,14 +105,14 @@ IUniswapV4PoolManager public immutable uniswapV4PoolManager;
 uniswapV4PoolManager.initialize(poolKey, initialPrice, hookData);
 ```
 
-#### **4. Advanced Fee Collection**
+### **4. Advanced Fee Collection**
 ```solidity
 // Uses V4's improved fee collection
 uint256 amount0 = poolManager.collectProtocolFees(address(this), currency0, 0);
 uint256 amount1 = poolManager.collectProtocolFees(address(this), currency1, 0);
 ```
 
-#### **5. Salt-based Position Separation**
+### **5. Salt-based Position Separation**
 ```solidity
 struct ModifyLiquidityParams {
     // ...
@@ -120,15 +120,15 @@ struct ModifyLiquidityParams {
 }
 ```
 
-**✅ TICKS THIS BOX**: Uses multiple V4 innovations - hooks, subscribers, singleton architecture, advanced fee handling.
+ Uses multiple V4 innovations - hooks, subscribers, singleton architecture, advanced fee handling.
 
 ---
 
-## Focus on creator-supporter value exchange through trading mechanisms
+# Focus on creator-supporter value exchange through trading mechanisms
 
-### Creator-Supporter Value Exchange:
+## Creator-Supporter Value Exchange:
 
-#### **1. Inspiration Revenue Sharing**
+### **1. Inspiration Revenue Sharing**
 ```solidity
 // Supporters of derivative works share revenue with original creators
 struct InspirationClaim {
@@ -145,7 +145,7 @@ function _distributeLiquidityFees(bytes32 contentId, BalanceDelta feesAccrued) i
 }
 ```
 
-#### **2. Reputation-Based Trading Incentives**
+### **2. Reputation-Based Trading Incentives**
 ```solidity
 struct ReputationMetrics {
     uint256 collaboratorScore;
@@ -160,7 +160,7 @@ function calculateRankingScore(bytes32 contentId) external view returns (uint256
 }
 ```
 
-#### **3. zk-Proof Verification Rewards**
+### **3. zk-Proof Verification Rewards**
 ```solidity
 // Supporters get bonuses for supporting verified inspiration claims
 if (claim.zkVerified) {
@@ -169,7 +169,7 @@ if (claim.zkVerified) {
 }
 ```
 
-#### **4. Network Effects Through Inspiration Graph**
+### **4. Network Effects Through Inspiration Graph**
 ```solidity
 // Trading activity in derivative works benefits entire inspiration chain
 mapping(bytes32 => bytes32[]) public inspirationGraph; // content => inspired works
