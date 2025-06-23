@@ -1,5 +1,43 @@
 # Technical Breakdown: Zora Coins + Uniswap V4 Integration
 
+
+# Table of Contents: Zora Coins + Uniswap V4 Integration
+
+## [1. Zora Coin Factory Deployment Pattern](#1-zora-coin-factory-deployment-pattern)
+- **[Core Factory Call](#core-factory-call)**
+- **[Pool Configuration Structure](#pool-configuration-structure)**
+
+## [2. Uniswap V4 Pool Initialization](#2-uniswap-v4-pool-initialization)
+- **[PoolKey Construction](#poolkey-construction)**
+- **[Pool Initialization Call](#pool-initialization-call)**
+
+## [3. Position Management & Liquidity](#3-position-management--liquidity)
+- **[Automated Position Creation](#automated-position-creation)**
+- **[Position Subscriber Interface](#position-subscriber-interface)**
+
+
+## [4. Revenue Distribution Mechanism](#4-revenue-distribution-mechanism)
+- **[Core Distribution Logic](#core-distribution-logic)**
+- **[Fee Accrual Handling](#fee-accrual-handling)**
+
+## [5. Advanced V4 Features Implementation](#5-advanced-v4-features-implementation)
+- **[Custom Hook Integration](#custom-hook-integration)**
+- **[Singleton Pool Manager Pattern](#singleton-pool-manager-pattern)**
+- **[Protocol Fee Collection](#protocol-fee-collection)**
+
+## [6. Reputation & Ranking System](#6-reputation--ranking-system)
+- **[Reputation Metrics Structure](#reputation-metrics-structure)**
+- **[Algorithmic Ranking Calculation](#algorithmic-ranking-calculation)**
+
+## [7. Zero-Knowledge Proof Integration](#7-zero-knowledge-proof-integration)
+- **[Inspiration Claim Structure](#inspiration-claim-structure)**
+- **[zk-Proof Verification](#zk-proof-verification)**
+
+## [8. Inspiration Graph & Network Effects](#8-inspiration-graph--network-effects)
+- **[Graph Structure Implementation](#graph-structure-implementation)**
+- **[Network Value Distribution](#network-value-distribution)**
+
+
 ## 1. Zora Coin Factory Deployment Pattern
 
 ### Core Factory Call
