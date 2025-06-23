@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
 /**
  * @title IPoolManager - Core interface for V4 liquidity operations
  */

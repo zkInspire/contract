@@ -8,15 +8,16 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 
 import "./interfaces/IZoraFactory.sol";
 import "./interfaces/IUniswapV4PoolManager.sol";
-import "./interfaces/IPoolManager.sol";
+
 import "./interfaces/IPositionManager.sol";
 import "./interfaces/IPositionSubscriber.sol";
-import "./interfaces/IProofOfInspirationHook.sol";
+import {IProofOfInspirationHook} from "./interfaces/IProofOfInspirationHook.sol";
 
-import {PoolKey} from "v4-core/src/types/PoolKey.sol";
-import {Currency} from "v4-core/src/types/Currency.sol";
-import {PoolId} from "v4-core/src/types/PoolId.sol";
-import {BalanceDelta} from "v4-core/src/types/BalanceDelta.sol";
+import {PoolKey} from "v4-core/types/PoolKey.sol";
+import {Currency} from "v4-core/types/Currency.sol";
+import {PoolId} from "v4-core/types/PoolId.sol";
+import {BalanceDelta} from "v4-core/types/BalanceDelta.sol";
+import {IHooks} from "v4-core/interfaces/IHooks.sol";
 
 /**
  * @title ProofOfInspiration
@@ -160,8 +161,9 @@ struct V4PoolConfig {
         address _uniswapV4PoolManager,
         address _positionManager,
         address _proofOfInspirationHook,
-        address _zkVerifier
-    ) {
+        address _zkVerifier,
+        address initialOwner
+    ) Ownable(initialOwner) {
         zoraFactory = IZoraFactory(_zoraFactory);
         uniswapV4PoolManager = IUniswapV4PoolManager(_uniswapV4PoolManager);
         positionManager = IPositionManager(_positionManager);
@@ -273,7 +275,7 @@ struct V4PoolConfig {
         require(revenueShareBps <= MAX_REVENUE_SHARE_BPS, "Revenue share too high");
         
         // Create derivative content
-        (derivativeContentId, coinAddress, positionTokenId) = createContent(
+        (derivativeContentId, coinAddress, positionTokenId) = this.createContent(
             name, symbol, uri, contentHash, poolConfig, mintParams, platformReferrer, salt
         );
         
@@ -370,21 +372,24 @@ struct V4PoolConfig {
             InspirationClaim memory claim = inspirationClaims[claimId];
             
             if (claim.derivative != address(0) && !claim.disputed) {
-                // Calculate revenue share from fees
-                uint256 feeAmount = uint256(uint128(BalanceDelta.unwrap(feesAccrued)));
-                uint256 shareAmount = (feeAmount * claim.revenueShareBps) / 10000;
-                
-                // Apply zk-proof bonus
-                if (claim.zkVerified) {
-                    uint256 bonus = (shareAmount * 200) / 10000; // 2% bonus
-                    shareAmount += bonus;
+                // Calculate revenue share from fees - handle both positive and negative deltas
+                int256 feesDelta = BalanceDelta.unwrap(feesAccrued);
+                if (feesDelta > 0) {
+                    uint256 feeAmount = uint256(feesDelta);
+                    uint256 shareAmount = (feeAmount * claim.revenueShareBps) / 10000;
+                    
+                    // Apply zk-proof bonus
+                    if (claim.zkVerified) {
+                        uint256 bonus = (shareAmount * 200) / 10000; // 2% bonus
+                        shareAmount += bonus;
+                    }
+                    
+                    // Add to pending revenue
+                    pendingRevenue[claim.derivative][content.creator] += shareAmount;
+                    totalRevenueGenerated[contentId] += shareAmount;
+                    
+                    emit RevenueDistributed(claim.derivative, content.creator, shareAmount, contentId);
                 }
-                
-                // Add to pending revenue
-                pendingRevenue[claim.derivative][content.creator] += shareAmount;
-                totalRevenueGenerated[contentId] += shareAmount;
-                
-                emit RevenueDistributed(claim.derivative, content.creator, shareAmount, contentId);
             }
         }
     }

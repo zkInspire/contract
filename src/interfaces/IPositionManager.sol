@@ -1,4 +1,8 @@
-import {Currency} from "v4-core/src/types/Currency.sol";
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+
+import {Currency} from "v4-core/types/Currency.sol";
 
 /**
  * @title IPositionManager

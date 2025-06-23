@@ -1,4 +1,7 @@
-import {BalanceDelta} from "v4-core/src/types/BalanceDelta.sol";
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import {BalanceDelta} from "v4-core/types/BalanceDelta.sol";
 
 /**
  * @title IPositionSubscriber

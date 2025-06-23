@@ -4,9 +4,9 @@ pragma solidity ^0.8.19;
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
 // Uniswap V4 core types
-import {PoolKey} from "v4-core/src/types/PoolKey.sol";
-import {Currency} from "v4-core/src/types/Currency.sol";
-import {PoolId} from "v4-core/src/types/PoolId.sol";
+import {PoolKey} from "v4-core/types/PoolKey.sol";
+import {Currency} from "v4-core/types/Currency.sol";
+import {PoolId} from "v4-core/types/PoolId.sol";
 
 // Interface imports
 import "./interfaces/IUniswapV4PoolManager.sol";

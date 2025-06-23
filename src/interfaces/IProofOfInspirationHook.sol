@@ -1,5 +1,9 @@
-import {PoolKey} from "v4-core/src/types/PoolKey.sol";
-import {BalanceDelta} from "v4-core/src/types/BalanceDelta.sol";
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import {PoolKey} from "v4-core/types/PoolKey.sol";
+import {IPoolManager} from "./IPoolManager.sol";
+import {BalanceDelta} from "v4-core/types/BalanceDelta.sol";
 /**
  * @title ProofOfInspirationV4Hook
  * @dev Custom hook for automatic fee routing in V4
