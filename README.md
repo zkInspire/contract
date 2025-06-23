@@ -33,49 +33,49 @@
 - Graph Structure Implementation
 - Network Value Distribution
 
-# Proof of Inspiration Protocol - Table of Contents
+
+# Test Contract - Table of Contents
 
 ## [Technical Architecture](#technical-architecture)
-- [Core Protocol Stack](#core-protocol-stack)
-- [Smart Contract Components](#smart-contract-components)
+- Core Protocol Stack
+- Smart Contract Components
 
 ## [Uniswap V4 Integration](#uniswap-v4-integration)
-- [Hook-Based Revenue Distribution](#hook-based-revenue-distribution)
-- [Pool Architecture](#pool-architecture)
-- [Position Management](#position-management)
+- Hook-Based Revenue Distribution
+- Pool Architecture
+- Position Management
 
 ## [Zora Protocol Integration](#zora-protocol-integration)
-- [Token Deployment Pipeline](#token-deployment-pipeline)
-- [Metadata Standards](#metadata-standards)
+- Token Deployment Pipeline
+- Metadata Standards
 
 ## [Revenue Distribution Engine](#revenue-distribution-engine)
-- [Multi-Layer Distribution](#multi-layer-distribution)
-- [Inspiration Graph Traversal](#inspiration-graph-traversal)
+- Multi-Layer Distribution
+- Inspiration Graph Traversal
 
 ## [Content Creation Flow](#content-creation-flow)
-- [Primary Content Creation](#primary-content-creation)
-- [Derivative Content Creation](#derivative-content-creation)
+- Primary Content Creation
+- Derivative Content Creation
 
 ## [Zero-Knowledge Proof Integration](#zero-knowledge-proof-integration)
-- [Proof Types](#proof-types)
-- [ZK Verification Implementation](#zk-verification-implementation)
+- Proof Types
+- ZK Verification Implementation
 
 ## [Data Structures](#data-structures)
-- [Core Storage](#core-storage)
-- [State Mappings](#state-mappings)
+- Core Storage
+- State Mappings
 
 ## [Reputation System](#reputation-system)
-- [Scoring Algorithm](#scoring-algorithm)
-- [Reputation Metrics](#reputation-metrics)
+- Scoring Algorithm
+- Reputation Metrics
 
 ## [Administrative Functions](#administrative-functions)
-- [Owner Controls](#owner-controls)
-- [Dispute Mechanism](#dispute-mechanism)
+- Owner Controls
+- Dispute Mechanism
 
 ## [Revenue Claiming](#revenue-claiming)
-- [Manual Revenue Withdrawal](#manual-revenue-withdrawal)
-- [Batch Revenue Claims](#batch-revenue-claims)
-
+- Manual Revenue Withdrawal
+- Batch Revenue Claims
 ## [Query Functions](#query-functions)
 - Content Discovery
 
