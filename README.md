@@ -36,50 +36,50 @@
 
 # Test Contract - Table of Contents
 
-## [Technical Architecture](#technical-architecture)
+## [Technical Architecture](#technical-architecture-1)
 - Core Protocol Stack
 - Smart Contract Components
 
-## [Uniswap V4 Integration](#uniswap-v4-integration)
+## [Uniswap V4 Integration](#uniswap-v4-integration-1)
 - Hook-Based Revenue Distribution
 - Pool Architecture
 - Position Management
 
-## [Zora Protocol Integration](#zora-protocol-integration)
+## [Zora Protocol Integration](#zora-protocol-integration-1)
 - Token Deployment Pipeline
 - Metadata Standards
 
-## [Revenue Distribution Engine](#revenue-distribution-engine)
+## [Revenue Distribution Engine](#revenue-distribution-engine-1)
 - Multi-Layer Distribution
 - Inspiration Graph Traversal
 
-## [Content Creation Flow](#content-creation-flow)
+## [Content Creation Flow](#content-creation-flow-1)
 - Primary Content Creation
 - Derivative Content Creation
 
-## [Zero-Knowledge Proof Integration](#zero-knowledge-proof-integration)
+## [Zero-Knowledge Proof Integration](#zero-knowledge-proof-integration-1)
 - Proof Types
 - ZK Verification Implementation
 
-## [Data Structures](#data-structures)
+## [Data Structures](#data-structures-1)
 - Core Storage
 - State Mappings
 
-## [Reputation System](#reputation-system)
+## [Reputation System](#reputation-system-1)
 - Scoring Algorithm
 - Reputation Metrics
 
-## [Administrative Functions](#administrative-functions)
+## [Administrative Functions](#administrative-functions-1)
 - Owner Controls
 - Dispute Mechanism
 
-## [Revenue Claiming](#revenue-claiming)
+## [Revenue Claiming](#revenue-claiming-1)
 - Manual Revenue Withdrawal
 - Batch Revenue Claims
-## [Query Functions](#query-functions)
+## [Query Functions](#query-functions-1)
 - Content Discovery
 
-## [Testing Framework](#testing-framework)
+## [Testing Framework](#testing-framework-1)
 - Mock Contract Implementation
 - Test Coverage
 
