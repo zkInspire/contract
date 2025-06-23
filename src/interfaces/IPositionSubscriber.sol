@@ -14,11 +14,7 @@ interface IPositionSubscriber {
      * @param liquidityDelta The change in liquidity
      * @param feesAccrued Any fees accrued during the change
      */
-    function notifyModifyLiquidity(
-        uint256 tokenId,
-        int256 liquidityDelta,
-        BalanceDelta feesAccrued
-    ) external;
+    function notifyModifyLiquidity(uint256 tokenId, int256 liquidityDelta, BalanceDelta feesAccrued) external;
 
     /**
      * @notice Called when position ownership changes
@@ -26,9 +22,5 @@ interface IPositionSubscriber {
      * @param previousOwner Previous owner address
      * @param newOwner New owner address
      */
-    function notifyTransfer(
-        uint256 tokenId,
-        address previousOwner,
-        address newOwner
-    ) external;
+    function notifyTransfer(uint256 tokenId, address previousOwner, address newOwner) external;
 }

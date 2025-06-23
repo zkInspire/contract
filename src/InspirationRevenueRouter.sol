@@ -21,20 +21,20 @@ import "./ProofOfInspiration.sol";
 contract InspirationRevenueRouter is ReentrancyGuard {
     ProofOfInspiration public immutable proofOfInspiration;
     IUniswapV4PoolManager public immutable poolManager;
-    
+
     mapping(address => bytes32) public coinToContentId; // Zora coin => content ID
     mapping(PoolId => bytes32) public poolToContentId; // V4 pool => content ID
     mapping(address => uint256) public lastFeeCollection; // Track last fee collection timestamp
-    
+
     event FeesCollected(address indexed coin, uint256 amount, uint256 timestamp);
     event RevenueRouted(bytes32 indexed claimId, uint256 amount);
     event V4FeesCollected(PoolId indexed poolId, uint256 amount0, uint256 amount1);
-    
+
     constructor(address _proofOfInspiration, address _poolManager) {
         proofOfInspiration = ProofOfInspiration(_proofOfInspiration);
         poolManager = IUniswapV4PoolManager(_poolManager);
     }
-    
+
     /**
      * @dev Register a coin with its content ID for revenue routing
      */
@@ -42,7 +42,7 @@ contract InspirationRevenueRouter is ReentrancyGuard {
         require(msg.sender == address(proofOfInspiration), "Unauthorized");
         coinToContentId[coin] = contentId;
     }
-    
+
     /**
      * @dev Register a V4 pool with its content ID
      */
@@ -50,25 +50,21 @@ contract InspirationRevenueRouter is ReentrancyGuard {
         require(msg.sender == address(proofOfInspiration), "Unauthorized");
         poolToContentId[poolId] = contentId;
     }
-    
+
     /**
      * @dev Collect protocol fees from V4 pool and route to inspiration claims
      */
-    function collectAndRouteV4Fees(
-        PoolKey memory poolKey,
-        Currency currency0,
-        Currency currency1
-    ) external {
+    function collectAndRouteV4Fees(PoolKey memory poolKey, Currency currency0, Currency currency1) external {
         PoolId poolId = PoolId.wrap(keccak256(abi.encode(poolKey)));
         bytes32 contentId = poolToContentId[poolId];
         require(contentId != bytes32(0), "Pool not registered");
-        
+
         // Collect protocol fees
         uint256 amount0 = poolManager.collectProtocolFees(address(this), currency0, 0);
         uint256 amount1 = poolManager.collectProtocolFees(address(this), currency1, 0);
-        
+
         emit V4FeesCollected(poolId, amount0, amount1);
-        
+
         // Route fees to inspiration claims would be handled by the main contract
         // through the position subscriber mechanism
     }

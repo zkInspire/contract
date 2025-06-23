@@ -18,11 +18,9 @@ interface IUniswapV4PoolManager {
      * @param sqrtPriceX96 The initial sqrt price of the pool
      * @param hookData Optional data to pass to hooks
      */
-    function initialize(
-        PoolKey memory key,
-        uint160 sqrtPriceX96,
-        bytes calldata hookData
-    ) external returns (int24 tick);
+    function initialize(PoolKey memory key, uint160 sqrtPriceX96, bytes calldata hookData)
+        external
+        returns (int24 tick);
 
     /**
      * @notice Get pool state
@@ -30,12 +28,7 @@ interface IUniswapV4PoolManager {
     function getSlot0(PoolId poolId)
         external
         view
-        returns (
-            uint160 sqrtPriceX96,
-            int24 tick,
-            uint24 protocolFee,
-            uint24 lpFee
-        );
+        returns (uint160 sqrtPriceX96, int24 tick, uint24 protocolFee, uint24 lpFee);
 
     /**
      * @notice Modify liquidity for a position
@@ -55,11 +48,9 @@ interface IUniswapV4PoolManager {
      * @param params Swap parameters
      * @param hookData Optional hook data
      */
-    function swap(
-        PoolKey memory key,
-        IPoolManager.SwapParams memory params,
-        bytes calldata hookData
-    ) external returns (BalanceDelta swapDelta);
+    function swap(PoolKey memory key, IPoolManager.SwapParams memory params, bytes calldata hookData)
+        external
+        returns (BalanceDelta swapDelta);
 
     /**
      * @notice Unlock the pool manager for flash accounting
@@ -108,11 +99,7 @@ interface IUniswapV4PoolManager {
      * @param currency The currency to collect
      * @param amount The amount to collect (0 for all)
      */
-    function collectProtocolFees(
-        address recipient,
-        Currency currency,
-        uint256 amount
-    ) external returns (uint256 amountCollected);
+    function collectProtocolFees(address recipient, Currency currency, uint256 amount)
+        external
+        returns (uint256 amountCollected);
 }
-
-

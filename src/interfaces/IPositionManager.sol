@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-
 import {Currency} from "v4-core/types/Currency.sol";
 
 /**
@@ -27,15 +26,10 @@ interface IPositionManager {
     /**
      * @notice Mint a new position
      */
-    function mint(MintParams calldata params) 
-        external 
-        payable 
-        returns (
-            uint256 tokenId,
-            uint128 liquidity,
-            uint256 amount0,
-            uint256 amount1
-        );
+    function mint(MintParams calldata params)
+        external
+        payable
+        returns (uint256 tokenId, uint128 liquidity, uint256 amount0, uint256 amount1);
 
     /**
      * @notice Set a subscriber for position notifications
@@ -57,10 +51,7 @@ interface IPositionManager {
      * @param amount0Max Maximum amount of token0 to collect
      * @param amount1Max Maximum amount of token1 to collect
      */
-    function collect(
-        uint256 tokenId,
-        address recipient,
-        uint128 amount0Max,
-        uint128 amount1Max
-    ) external returns (uint256 amount0, uint256 amount1);
+    function collect(uint256 tokenId, address recipient, uint128 amount0Max, uint128 amount1Max)
+        external
+        returns (uint256 amount0, uint256 amount1);
 }

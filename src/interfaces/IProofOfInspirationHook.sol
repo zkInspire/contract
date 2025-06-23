@@ -8,6 +8,7 @@ import {BalanceDelta} from "v4-core/types/BalanceDelta.sol";
  * @title ProofOfInspirationV4Hook
  * @dev Custom hook for automatic fee routing in V4
  */
+
 interface IProofOfInspirationHook {
     /**
      * @notice Called after each swap to route fees to inspiration claims
