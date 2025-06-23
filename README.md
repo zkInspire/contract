@@ -3,7 +3,7 @@
 
 # Table of Contents: Zora Coins + Uniswap V4 Integration
 
- [1. Zora Coin Factory Deployment Pattern](#1-zora-coin-factory-deployment-pattern)
+### [1. Zora Coin Factory Deployment Pattern](#1-zora-coin-factory-deployment-pattern)
 - **[Core Factory Call](#core-factory-call)**
 - **[Pool Configuration Structure](#pool-configuration-structure)**
 
